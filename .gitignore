@@ -1,0 +1,8 @@
+.classpath
+.proguard.cfg
+bin
+bin/*
+bin/**/*
+gen
+gen/*
+gen/**/*

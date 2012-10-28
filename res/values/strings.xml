@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SMS Proxy</string>
+    
+    <!-- 設定系 -->
+    <string name="prefs_sms_enabled_title">enable SMS proxy</string>
+    <string name="prefs_call_enabled_title">enable call notif.</string>
+    <string name="prefs_sms_enabled_summary">enable SMS proxy functionality</string>
+    <string name="prefs_call_enabled_summary">enable call notif. functionality</string>
+    <string name="prefs_proxyTo_title">forwarded Tel No.</string>
+    <string name="prefs_proxyTo_summary">forward to (be careful not to loop)</string>
+    
+    <!-- エラーメッセージ系 -->
+    <string name="forward_sms_ok">forwarded a SMS</string>
+    <string name="forward_sms_ng">failed to forward a SMS. Please check destination Tel No.</string>
+    <string name="forward_call_ok">notified a call</string>
+    <string name="forward_call_ng">failed to notify a call. Please check destination Tel No.</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SMSプロキシ</string>
+    
+    <!-- 設定系 -->
+    <string name="prefs_sms_enabled_title">SMSプロキシ有効</string>
+    <string name="prefs_call_enabled_title">着信通知有効</string>
+    <string name="prefs_sms_enabled_summary">SMSプロキシを有効にする</string>
+    <string name="prefs_call_enabled_summary">着信通知を有効にする</string>
+    <string name="prefs_proxyTo_title">プロキシ先電話番号</string>
+    <string name="prefs_proxyTo_summary">SMSの送信先電話番号(循環注意)</string>
+    
+    <!-- エラーメッセージ系 -->
+    <string name="forward_sms_ok">SMSの転送を行いました。</string>
+    <string name="forward_sms_ng">SMSの転送に失敗しました。送信先電話番号を確認してください</string>
+    <string name="forward_call_ok">着信通知を行いました。</string>
+    <string name="forward_call_ng">着信通知に失敗しました。送信先電話番号を確認してください</string>
+</resources>
