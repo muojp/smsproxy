@@ -1,5 +1,7 @@
 package jp.muo.smsproxy;
 
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -72,7 +74,10 @@ public class SmsProxyManager {
 
 		try {
 			SmsManager sms = SmsManager.getDefault();
-			sms.sendTextMessage(this.getProxyTo(), null, msgText, null, null);
+			ArrayList<String> msgs = sms.divideMessage(msgText);
+			for (String msg : msgs) {
+				sms.sendTextMessage(this.getProxyTo(), null, msg, null, null);
+			}
 			Toast.makeText(this.ctx, msgSucceeded, Toast.LENGTH_LONG).show();
 			return true;
 		} catch (Exception e) {
