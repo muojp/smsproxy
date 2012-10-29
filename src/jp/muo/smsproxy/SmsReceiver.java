@@ -19,6 +19,9 @@ public class SmsReceiver extends BroadcastReceiver {
         if (bundle != null && mgr.isEnabled() && !mgr.getProxyTo().equals("")) {
         	String msgText = "";
             Object[] pdus = (Object[]) bundle.get("pdus");
+            if (pdus.length == 0) {
+            	return;
+            }
         	// Log.d(TAG, Integer.toString(pdus.length) + " messages found");
             msgs = new SmsMessage[pdus.length];
             for (int i = 0; i < msgs.length; i++){
