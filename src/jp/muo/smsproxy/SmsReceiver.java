@@ -13,7 +13,6 @@ public class SmsReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		// Log.d(TAG, "received");
 		SmsProxyManager mgr = new SmsProxyManager(context);
-        mgr.setType(SmsProxyManager.Mode.SMS);
 		Bundle bundle = intent.getExtras();
         if (bundle != null && mgr.isEnabled() && !mgr.getProxyTo().equals("")) {
         	String msgText = "";
@@ -28,7 +27,7 @@ public class SmsReceiver extends BroadcastReceiver {
                 msgText += String.format(smsTemplate, orgSms.getOriginatingAddress(), orgSms.getMessageBody().toString());
             }
         	// Log.d(TAG, "msg: " + msgText);
-            mgr.send(msgText);
+            mgr.send(SmsProxyManager.Mode.SMS, msgText);
         }
 	}
 }

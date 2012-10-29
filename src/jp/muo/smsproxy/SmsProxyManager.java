@@ -78,7 +78,16 @@ public class SmsProxyManager {
 		}
 	}
 
+	/**
+	 * @deprecated setType(Mode) -> send(String) is deprecated as of 1.1b. Should use send(Mode, String)
+	 * @param call
+	 */
 	public void setType(Mode call) {
 		this.sendMode = call;
+	}
+
+	public boolean send(Mode smsMode, String msgText) {
+		this.sendMode = smsMode;
+		return send(msgText);
 	}
 }

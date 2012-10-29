@@ -16,10 +16,9 @@ public class RingingReceiver extends BroadcastReceiver {
 			public void onCallStateChanged(int state, String number) {
 				if (state == TelephonyManager.CALL_STATE_RINGING) {
 					SmsProxyManager mgr = new SmsProxyManager(context);
-					mgr.setType(SmsProxyManager.Mode.CALL);
 					if (mgr.isEnabled()) {
 						String msgText = "call from " + (number != null ? number : "unknown") + "\n";
-						mgr.send(msgText);
+						mgr.send(SmsProxyManager.Mode.CALL, msgText);
 					}
 				}
 				telephony.listen(this, PhoneStateListener.LISTEN_NONE);
