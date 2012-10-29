@@ -24,7 +24,7 @@ public class SmsReceiver extends BroadcastReceiver {
             }
         	// Log.d(TAG, Integer.toString(pdus.length) + " messages found");
             msgs = new SmsMessage[pdus.length];
-            for (int i = 0; i < msgs.length; i++){
+            for (int i = 0; i < msgs.length; ++i){
                 msgs[i] = SmsMessage.createFromPdu((byte[])pdus[i]);
                 msgText += "fwd " + msgs[i].getOriginatingAddress() + ":\n";
                 msgText += msgs[i].getMessageBody().toString() + "\n";
