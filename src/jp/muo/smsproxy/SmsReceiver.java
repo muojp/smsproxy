@@ -15,7 +15,6 @@ public class SmsReceiver extends BroadcastReceiver {
 		SmsProxyManager mgr = new SmsProxyManager(context);
         mgr.setType(SmsProxyManager.Mode.SMS);
 		Bundle bundle = intent.getExtras();
-        SmsMessage[] msgs = null;
         if (bundle != null && mgr.isEnabled() && !mgr.getProxyTo().equals("")) {
         	String msgText = "";
             Object[] pdus = (Object[]) bundle.get("pdus");
@@ -23,11 +22,10 @@ public class SmsReceiver extends BroadcastReceiver {
             	return;
             }
         	// Log.d(TAG, Integer.toString(pdus.length) + " messages found");
-            msgs = new SmsMessage[pdus.length];
             String smsTemplate = context.getString(R.string.sms_content);
-            for (int i = 0; i < msgs.length; ++i) {
-                msgs[i] = SmsMessage.createFromPdu((byte[])pdus[i]);
-                msgText += String.format(smsTemplate, msgs[i].getOriginatingAddress(), msgs[i].getMessageBody().toString());
+            for (int i = 0; i < pdus.length; ++i) {
+                SmsMessage orgSms = SmsMessage.createFromPdu((byte[])pdus[i]);
+                msgText += String.format(smsTemplate, orgSms.getOriginatingAddress(), orgSms.getMessageBody().toString());
             }
         	// Log.d(TAG, "msg: " + msgText);
             mgr.send(msgText);
