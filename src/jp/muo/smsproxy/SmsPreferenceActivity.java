@@ -8,5 +8,4 @@ public class SmsPreferenceActivity extends PreferenceActivity {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.prefs);
 	}
-
 }

@@ -27,5 +27,4 @@ public class RingingReceiver extends BroadcastReceiver {
 		};
 		telephony.listen(ringingListener, PhoneStateListener.LISTEN_CALL_STATE);
 	}
-
 }
