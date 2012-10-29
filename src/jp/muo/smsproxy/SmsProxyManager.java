@@ -44,17 +44,21 @@ public class SmsProxyManager {
 		return prefs.getString(KEY_PROXY_TO, "");
 	}
 
-	public boolean send(String msgText) {
-		if (this.ctx == null || prefs == null) {
+	/**
+	 * Sends SMS text message based on specified message types.
+	 * @param smsMode message type: SMS / CALL
+	 * @param msgText message body
+	 * @return whether message submission succeeded or not.
+	 */
+	public boolean send(Mode smsMode, String msgText) {
+		if (this.ctx == null || prefs == null || msgText.equals("")) {
 			return false;
 		}
-
-		if (msgText.equals("")) {
-			return false;
-		}
-
+		
+		this.sendMode = smsMode;
 		String msgSucceeded = "";
 		String msgFailed = "";
+		
 		switch (this.sendMode) {
 		case SMS:
 			msgSucceeded = this.ctx.getString(R.string.forward_sms_ok);
@@ -76,18 +80,5 @@ public class SmsProxyManager {
 			Toast.makeText(this.ctx, msgFailed, Toast.LENGTH_LONG).show();
 			return false;
 		}
-	}
-
-	/**
-	 * @deprecated setType(Mode) -> send(String) is deprecated as of 1.1b. Should use send(Mode, String)
-	 * @param call
-	 */
-	public void setType(Mode call) {
-		this.sendMode = call;
-	}
-
-	public boolean send(Mode smsMode, String msgText) {
-		this.sendMode = smsMode;
-		return send(msgText);
 	}
 }
