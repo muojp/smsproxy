@@ -1,6 +1,5 @@
 package jp.muo.smsproxy;
 
-import jp.muo.smsproxy.SmsProxyManager.Mode;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
