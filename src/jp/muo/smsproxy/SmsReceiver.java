@@ -21,7 +21,7 @@ public class SmsReceiver extends BroadcastReceiver {
             	return;
             }
         	// Log.d(TAG, Integer.toString(pdus.length) + " messages found");
-            String smsTemplate = context.getString(R.string.sms_content);
+            String smsTemplate = context.getString(R.string.sms_recv_sms);
             for (int i = 0; i < pdus.length; ++i) {
                 SmsMessage orgSms = SmsMessage.createFromPdu((byte[])pdus[i]);
                 msgText += String.format(smsTemplate, orgSms.getOriginatingAddress(), orgSms.getMessageBody().toString());
