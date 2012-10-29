@@ -19,4 +19,5 @@
     <!-- SMSテンプレート系 -->
     <string name="sms_recv_sms" formatted="false">fwd %1$s:%n%2$s%n</string>
     <string name="sms_on_call" formatted="false">call from %1$s%n</string>
+    <string name="subscriber_unknown">unknown</string>
 </resources>
