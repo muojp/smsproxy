@@ -83,7 +83,7 @@ public class SmsProxyManager {
 		} catch (Exception e) {
 			if (e.getLocalizedMessage() != null)
 			{
-				System.out.println(e.getLocalizedMessage());
+				System.err.println(e.getLocalizedMessage());
 			}
 			Toast.makeText(this.ctx, msgFailed, Toast.LENGTH_LONG).show();
 			return false;
