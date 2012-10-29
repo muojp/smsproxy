@@ -17,5 +17,5 @@
     <string name="forward_call_ng">failed to notify a call. Please check destination Tel No.</string>
     
     <!-- SMS message templates -->
-    <string name="sms_content">fwd %1$s:%n%2$s\n</string>
+    <string name="sms_content">fwd %1$s:%n%2$s%n</string>
 </resources>
