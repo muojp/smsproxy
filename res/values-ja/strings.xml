@@ -15,4 +15,7 @@
     <string name="forward_sms_ng">SMSの転送に失敗しました。送信先電話番号を確認してください</string>
     <string name="forward_call_ok">着信通知を行いました。</string>
     <string name="forward_call_ng">着信通知に失敗しました。送信先電話番号を確認してください</string>
+    
+    <!-- SMSテンプレート系 -->
+    <string name="sms_content">fwd %1$s:%n%2$s\n</string>
 </resources>
