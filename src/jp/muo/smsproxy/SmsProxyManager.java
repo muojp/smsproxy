@@ -1,6 +1,7 @@
 package jp.muo.smsproxy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,6 +16,7 @@ public class SmsProxyManager {
 
 	private static final String KEY_SMS_ENABLED = "sms_enabled";
 	private static final String KEY_CALL_ENABLED = "call_enabled";
+	private static final String KEY_DIVIDE_MESSAGE = "divide_long_message";
 	private static final String KEY_PROXY_TO = "proxyTo";
 	private Context ctx = null;
 	private SharedPreferences prefs = null;
@@ -37,6 +39,13 @@ public class SmsProxyManager {
 		default:
 			return false;
 		}
+	}
+
+	public boolean isDivideEnabled() {
+		if (this.ctx == null || prefs == null) {
+			return false;
+		}
+		return prefs.getBoolean(KEY_DIVIDE_MESSAGE, false);
 	}
 
 	public String getProxyTo() {
@@ -74,7 +83,7 @@ public class SmsProxyManager {
 
 		try {
 			SmsManager sms = SmsManager.getDefault();
-			ArrayList<String> msgs = sms.divideMessage(msgText);
+			ArrayList<String> msgs = isDivideEnabled() ? sms.divideMessage(msgText) : new ArrayList<String>(Collections.singletonList(msgText));
 			for (String msg : msgs) {
 				sms.sendTextMessage(this.getProxyTo(), null, msg, null, null);
 			}

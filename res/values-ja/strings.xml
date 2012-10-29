@@ -7,6 +7,8 @@
     <string name="prefs_call_enabled_title">着信通知有効</string>
     <string name="prefs_sms_enabled_summary">SMSプロキシを有効にする</string>
     <string name="prefs_call_enabled_summary">着信通知を有効にする</string>
+    <string name="prefs_divide_long_message_title">長いSMSを分割</string>
+    <string name="prefs_divide_long_message_summary">長いメッセージを適宜分割する</string>
     <string name="prefs_proxyTo_title">プロキシ先電話番号</string>
     <string name="prefs_proxyTo_summary">SMSの送信先電話番号(循環注意)</string>
     
