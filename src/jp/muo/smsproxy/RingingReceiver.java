@@ -10,6 +10,7 @@ public class RingingReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(final Context context, Intent intent) {
+		BatteryLevelObserver.updateStatus(context);
 		final TelephonyManager telephony = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 		PhoneStateListener ringingListener = new PhoneStateListener() {
 			@Override

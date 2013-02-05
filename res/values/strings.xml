@@ -5,8 +5,10 @@
     <!-- configuration -->
     <string name="prefs_sms_enabled_title">enable SMS proxy</string>
     <string name="prefs_call_enabled_title">enable call notif.</string>
+    <string name="prefs_bat_enabled_title">enable bat. notif.</string>
     <string name="prefs_sms_enabled_summary">enable SMS proxy functionality</string>
     <string name="prefs_call_enabled_summary">enable call notif. functionality</string>
+    <string name="prefs_bat_enabled_summary">enable battery level warning</string>
     <string name="prefs_divide_long_message_title">divide long SMS message</string>
     <string name="prefs_divide_long_message_summary">divide long messages to fit network limitation</string>
     <string name="prefs_proxyTo_title">forwarded Tel No.</string>
@@ -17,9 +19,12 @@
     <string name="forward_sms_ng">failed to forward a SMS. Please check destination Tel No.</string>
     <string name="forward_call_ok">notified a call</string>
     <string name="forward_call_ng">failed to notify a call. Please check destination Tel No.</string>
+    <string name="notify_bat_ok">notified battery status</string>
+    <string name="notify_bat_ng">failed to notify battery status. Please check destination Tel No.</string>
     
     <!-- SMS message templates -->
     <string name="sms_recv_sms" formatted="false">fwd %1$s:%n%2$s%n</string>
     <string name="sms_on_call" formatted="false">call from %1$s%n</string>
     <string name="subscriber_unknown">unknown</string>
+    <string name="sms_bat">battery level is low</string>
 </resources>

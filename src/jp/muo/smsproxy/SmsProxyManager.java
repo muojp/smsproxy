@@ -11,11 +11,12 @@ import android.widget.Toast;
 
 public class SmsProxyManager {
 	public enum Mode {
-		SMS, CALL
+		SMS, CALL, BATTERY
 	};
 
 	private static final String KEY_SMS_ENABLED = "sms_enabled";
 	private static final String KEY_CALL_ENABLED = "call_enabled";
+	private static final String KEY_BAT_ENABLED = "bat_enabled";
 	private static final String KEY_DIVIDE_MESSAGE = "divide_long_message";
 	private static final String KEY_PROXY_TO = "proxyTo";
 	private Context ctx = null;
@@ -36,6 +37,8 @@ public class SmsProxyManager {
 			return prefs.getBoolean(KEY_SMS_ENABLED, false);
 		case CALL:
 			return prefs.getBoolean(KEY_CALL_ENABLED, false);
+		case BATTERY:
+			return prefs.getBoolean(KEY_BAT_ENABLED, false);
 		default:
 			return false;
 		}
@@ -78,6 +81,10 @@ public class SmsProxyManager {
 		case CALL:
 			msgSucceeded = this.ctx.getString(R.string.forward_call_ok);
 			msgFailed = this.ctx.getString(R.string.forward_call_ng);
+			break;
+		case BATTERY:
+			msgSucceeded = this.ctx.getString(R.string.notify_bat_ok);
+			msgFailed = this.ctx.getString(R.string.notify_bat_ng);
 			break;
 		}
 

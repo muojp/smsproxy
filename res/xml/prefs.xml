@@ -11,6 +11,11 @@
     	android:summary="@string/prefs_call_enabled_summary"
     />
     <CheckBoxPreference 
+    	android:key="bat_enabled"
+    	android:title="@string/prefs_bat_enabled_title"
+    	android:summary="@string/prefs_bat_enabled_summary"
+    />
+        <CheckBoxPreference 
     	android:key="divide_long_message"
     	android:title="@string/prefs_divide_long_message_title"
     	android:summary="@string/prefs_divide_long_message_summary"

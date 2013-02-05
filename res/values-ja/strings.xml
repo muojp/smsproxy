@@ -5,8 +5,10 @@
     <!-- 設定系 -->
     <string name="prefs_sms_enabled_title">SMSプロキシ有効</string>
     <string name="prefs_call_enabled_title">着信通知有効</string>
+    <string name="prefs_bat_enabled_title">バッテリ不足通知有効</string>
     <string name="prefs_sms_enabled_summary">SMSプロキシを有効にする</string>
     <string name="prefs_call_enabled_summary">着信通知を有効にする</string>
+    <string name="prefs_bat_enabled_summary">バッテリ不足通知を有効にする</string>
     <string name="prefs_divide_long_message_title">長いSMSを分割</string>
     <string name="prefs_divide_long_message_summary">長いメッセージを適宜分割する</string>
     <string name="prefs_proxyTo_title">プロキシ先電話番号</string>
@@ -17,9 +19,12 @@
     <string name="forward_sms_ng">SMSの転送に失敗しました。送信先電話番号を確認してください</string>
     <string name="forward_call_ok">着信通知を行いました。</string>
     <string name="forward_call_ng">着信通知に失敗しました。送信先電話番号を確認してください</string>
+    <string name="notify_bat_ok">バッテリ状態通知を行いました。</string>
+    <string name="notify_bat_ng">バッテリ状態通知に失敗しました。送信先電話番号を確認してください</string>
     
     <!-- SMSテンプレート系 -->
     <string name="sms_recv_sms" formatted="false">fwd %1$s:%n%2$s%n</string>
     <string name="sms_on_call" formatted="false">call from %1$s%n</string>
     <string name="subscriber_unknown">unknown</string>
+    <string name="sms_bat">battery level is low</string>
 </resources>

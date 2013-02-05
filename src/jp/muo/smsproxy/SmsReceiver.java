@@ -12,6 +12,7 @@ public class SmsReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// Log.d(TAG, "received");
+		BatteryLevelObserver.updateStatus(context);
 		SmsProxyManager mgr = new SmsProxyManager(context);
 		Bundle bundle = intent.getExtras();
         if (bundle != null && mgr.isEnabled() && !mgr.getProxyTo().equals("")) {
