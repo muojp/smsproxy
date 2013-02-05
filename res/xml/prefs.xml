@@ -24,5 +24,6 @@
     	android:key="proxyTo"
     	android:title="@string/prefs_proxyTo_title"
     	android:summary="@string/prefs_proxyTo_summary"
+    	android:inputType="phone"
     />
 </PreferenceScreen>
