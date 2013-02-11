@@ -5,10 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.BatteryManager;
 import android.util.Log;
-import android.widget.Toast;
 
 public class BatteryLevelObserver extends BroadcastReceiver {
 	private static final String BATTERY_PREFS_KEY = "bat_level";
