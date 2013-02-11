@@ -13,7 +13,7 @@ public class SmsReceiver extends BroadcastReceiver {
 		BatteryLevelObserver.updateStatus(context);
 		SmsProxyManager mgr = new SmsProxyManager(context);
 		Bundle bundle = intent.getExtras();
-        if (bundle != null && mgr.isEnabled() && !mgr.getProxyTo().equals("")) {
+        if (bundle != null && !mgr.getProxyTo().equals("")) {
         	String msgText = "";
             Object[] pdus = (Object[]) bundle.get("pdus");
             if (pdus.length == 0) {

@@ -17,12 +17,9 @@ public class RingingReceiver extends BroadcastReceiver {
 			public void onCallStateChanged(int state, String number) {
 				if (state == TelephonyManager.CALL_STATE_RINGING) {
 					SmsProxyManager mgr = new SmsProxyManager(context);
-					if (mgr.isEnabled()) {
-						String msgText = String.format(
-								context.getString(R.string.sms_on_call),
-								(number != null && number != "") ? number : context.getString(R.string.subscriber_unknown));
-						mgr.send(SmsProxyManager.Mode.CALL, msgText);
-					}
+					String msgText = String.format(context.getString(R.string.sms_on_call),
+							(number != null && number != "") ? number : context.getString(R.string.subscriber_unknown));
+					mgr.send(SmsProxyManager.Mode.CALL, msgText);
 				}
 				telephony.listen(this, PhoneStateListener.LISTEN_NONE);
 			}

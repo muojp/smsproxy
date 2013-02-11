@@ -71,6 +71,10 @@ public class SmsProxyManager {
 		}
 		
 		this.sendMode = smsMode;
+		
+		if (!isEnabled()) {
+			return false;
+		}
 		String msgSucceeded = "";
 		String msgFailed = "";
 		

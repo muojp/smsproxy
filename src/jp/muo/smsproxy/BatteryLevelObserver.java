@@ -28,7 +28,7 @@ public class BatteryLevelObserver extends BroadcastReceiver {
 		BroadcastReceiver batReceiver = new BroadcastReceiver() {
 			@Override
 			public void onReceive(Context context, Intent intent) {
-				context.unregisterReceiver(this);
+				context.getApplicationContext().unregisterReceiver(this);
 				SharedPreferences prefs = context.getSharedPreferences(BATTERY_PREFS_KEY, Context.MODE_PRIVATE);
 				int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
 				boolean isLowerTrigger = level <= BAT_LOW;
@@ -44,9 +44,7 @@ public class BatteryLevelObserver extends BroadcastReceiver {
 						Log.d(SmsProxyManager.TAG, String.format(
 								"sending battery level notification(level: %d%%, isPlugged: %s", level,
 								isPlugged ? "true" : "false"));
-						if (mgr.isEnabled()) {
-							mgr.send(SmsProxyManager.Mode.CALL, context.getString(R.string.sms_bat));
-						}
+						mgr.send(SmsProxyManager.Mode.BATTERY, context.getString(R.string.sms_bat));
 						isBatteryLevelOkay = false;
 					}
 				} else {
@@ -62,6 +60,6 @@ public class BatteryLevelObserver extends BroadcastReceiver {
 				}
 			}
 		};
-		context.registerReceiver(batReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+		context.getApplicationContext().registerReceiver(batReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 	}
 }
