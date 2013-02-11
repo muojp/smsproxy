@@ -21,8 +21,7 @@ public class BatteryLevelObserver extends BroadcastReceiver {
 		final String action = intent.getAction();
 		if (action.equals(Intent.ACTION_BATTERY_LOW)) {
 			BatteryLevelObserver.updateStatus(context);
-		}
-		else if (action.equals(Intent.ACTION_BATTERY_OKAY)) {
+		} else if (action.equals(Intent.ACTION_BATTERY_OKAY)) {
 			BatteryLevelObserver.updateStatus(context);
 		}
 	}
@@ -50,8 +49,7 @@ public class BatteryLevelObserver extends BroadcastReceiver {
 						}
 						isBatteryLevelOkay = false;
 					}
-				}
-				else {
+				} else {
 					if (isOkayTrigger) {
 						isBatteryLevelOkay = true;
 					}
