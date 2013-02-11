@@ -10,6 +10,7 @@ import android.telephony.SmsManager;
 import android.widget.Toast;
 
 public class SmsProxyManager {
+	public static final String TAG = "smsProxy";
 	public enum Mode {
 		SMS, CALL, BATTERY
 	};

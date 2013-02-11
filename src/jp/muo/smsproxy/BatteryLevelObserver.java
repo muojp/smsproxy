@@ -43,7 +43,9 @@ public class BatteryLevelObserver extends BroadcastReceiver {
 				if (isOkayInPrefs) {
 					if (isLowerTrigger && !isPlugged) {
 						SmsProxyManager mgr = new SmsProxyManager(context);
-						Toast.makeText(context, "sending bat. notif.", Toast.LENGTH_LONG).show();
+						Log.d(SmsProxyManager.TAG, String.format(
+								"sending battery level notification(level: %d%%, isPlugged: %s", level,
+								isPlugged ? "true" : "false"));
 						if (mgr.isEnabled()) {
 							mgr.send(SmsProxyManager.Mode.CALL, context.getString(R.string.sms_bat));
 						}
@@ -54,7 +56,8 @@ public class BatteryLevelObserver extends BroadcastReceiver {
 						isBatteryLevelOkay = true;
 					}
 				}
-				Toast.makeText(context, "isOkay: " + (isBatteryLevelOkay ? "true" : "false"), Toast.LENGTH_LONG).show();
+				Log.d(SmsProxyManager.TAG,
+						String.format("isBatteryLevelOkay: %s", isBatteryLevelOkay ? "true" : "false"));
 				if (isOkayInPrefs != isBatteryLevelOkay) {
 					editor.putBoolean(PREFS_IS_OKAY, isBatteryLevelOkay);
 					editor.commit();

@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.telephony.SmsMessage;
 
 public class SmsReceiver extends BroadcastReceiver {
-	public static final String TAG = "smsProxy";
-
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// Log.d(TAG, "received");
