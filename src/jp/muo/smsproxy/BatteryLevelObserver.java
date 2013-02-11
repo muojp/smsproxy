@@ -13,8 +13,8 @@ import android.widget.Toast;
 public class BatteryLevelObserver extends BroadcastReceiver {
 	private static final String BATTERY_PREFS_KEY = "bat_level";
 	private static final String PREFS_IS_OKAY = "is_okay";
-	private static final int BAT_LOW = 74;
-	private static final int BAT_OKAY = 80;
+	private static final int BAT_LOW = 15;
+	private static final int BAT_OKAY = 20;
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
